@@ -29,7 +29,7 @@ def pregunta_01():
         linea_actual = linea_actual.strip()
         linea_dividida = linea_actual.split()
         if len(linea_dividida) > 0 and es_primera_linea:
-            fila_temporal.append(int(linea_dividida[0]))  # Número del clúster
+            fila_temporal.append(int(linea_dividida[0]))  # nmmero del cluster
             fila_temporal.append(int(linea_dividida[1]))  # Cantidad de palabras clave
             fila_temporal.append(float(linea_dividida[2].replace(',', '.')))  # Porcentaje de palabras clave
             fila_temporal.append(" ".join(linea_dividida[4:]))  # Principales palabras clave
@@ -41,8 +41,8 @@ def pregunta_01():
         else:
           es_primera_linea = True
           fila_temporal[3] = ' '.join(fila_temporal[3:]).replace('.', '')  # Unir las palabras clave
-          tabla_datos.append(fila_temporal[:4])  # Agregar fila procesada
-          fila_temporal = []  # Reiniciar fila temporal
+          tabla_datos.append(fila_temporal[:4])  # Agregar fila 
+          fila_temporal = []  # Reiniciar fila 
 
     return(pd.DataFrame(tabla_datos[1:], columns=tabla_datos[0]))
 
